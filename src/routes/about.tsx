@@ -1,21 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import SiteLayout from "../components/site/SiteLayout";
-import Hero from "../components/site/Hero";
 import About from "../components/site/About";
 import Skills from "../components/site/Skills";
 import Technologies from "../components/site/Technologies";
-import Projects from "../components/site/Projects";
-import Services from "../components/site/Services";
 import Experience from "../components/site/Experience";
 import WhyChoose from "../components/site/WhyChoose";
 import Testimonials from "../components/site/Testimonials";
-import Contact from "../components/site/Contact";
+import PageHeader from "../components/site/PageHeader";
 
-const title = "Prospera Arcon LLP Pune | Digital Portfolio";
+const title = "About & Skills | Prospera Arcon LLP Pune Portfolio";
 const description =
-  "A modern digital portfolio showcasing technical skills, creative web experiments, projects and responsive user experiences by Prospera Arcon LLP Pune.";
+  "Learn about the Prospera Arcon LLP Pune portfolio: frontend skills, technology stack, digital journey timeline and demo client feedback.";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title },
@@ -24,22 +21,23 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
     ],
   }),
-  component: Home,
+  component: AboutPage,
 });
 
-function Home() {
+function AboutPage() {
   return (
     <SiteLayout>
-      <Hero />
+      <PageHeader
+        eyebrow="About"
+        title="A portfolio built as a living resume"
+        description="Skills, technologies and the journey behind this demo portfolio for Prospera Arcon LLP Pune."
+      />
       <About />
       <Skills />
       <Technologies />
-      <Projects limit={6} />
-      <Services />
       <Experience />
       <WhyChoose />
       <Testimonials />
-      <Contact />
     </SiteLayout>
   );
 }
