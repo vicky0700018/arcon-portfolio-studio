@@ -4,7 +4,7 @@ import { projectCategories } from "../../lib/portfolio-data";
 import SafeImage from "./SafeImage";
 import SectionHeading from "./SectionHeading";
 
-export default function Projects({ limit }) {
+export default function Projects({ limit = 0 }) {
   const { data } = usePortfolio();
   const [filter, setFilter] = useState("All");
 
