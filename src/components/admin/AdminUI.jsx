@@ -71,7 +71,7 @@ export function Panel({ children, className = "" }) {
 
 export function SavedNote({ shown }) {
   if (!shown) return null;
-  return <span className="text-sm font-semibold text-teal">Saved to this browser.</span>;
+  return <span className="text-sm font-semibold text-cyan">Saved to this browser.</span>;
 }
 
 /**
